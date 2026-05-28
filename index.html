@@ -2,23 +2,36 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Noora的作品集</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nora | 作品集</title>
     <style>
-        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
-        h1 { color: #333; }
-        .project { margin: 30px 0; }
-        img { max-width: 100%; border-radius: 8px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "PingFang SC", "Helvetica Neue", sans-serif; background: #fff; color: #111; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        header { margin-bottom: 80px; }
+        h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
+        .sub { font-size: 18px; color: #666; }
+        .project { margin-bottom: 60px; }
+        h2 { font-size: 24px; margin-bottom: 20px; }
+        iframe { width: 100%; height: 700px; border: 1px solid #eee; border-radius: 8px; }
+        a { color: #000; text-decoration: underline; }
+        footer { margin-top: 100px; font-size: 14px; color: #999; }
     </style>
 </head>
 <body>
-    <h1>嗨，我是Noora</h1>
-    <p>UI / 交互设计师 | 作品集网站</p>
+    <div class="container">
+        <header>
+            <h1>Nora</h1>
+            <p class="sub">UX / 交互设计师 | 作品集</p>
+        </header>
 
-    <div class="project">
-        <h2>项目1：我的作品集</h2>
-        <iframe src="project1.pdf" width="100%" height="700px" style="border:1px solid #ccc;"></iframe>
-        <p>如果上面看不到，<a href="portfolio1.pdf" target="_blank">点这里打开PDF</a></p>
+        <section class="project">
+            <h2>作品集 PDF</h2>
+            <iframe src="project1.pdf"></iframe>
+            <p style="margin-top:10px;">打不开？<a href="portfolio1.pdf" target="_blank">点这里打开</a></p>
+        </section>
+
+        <footer>© 2026 Nora. All rights reserved.</footer>
     </div>
-
 </body>
 </html>
