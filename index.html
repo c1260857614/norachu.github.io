@@ -30,11 +30,15 @@
             z-index: 200;
             display: flex;
             align-items: center;
-            /* 头像左对齐侧边栏，标题区域整体向右偏移 */
-            padding-left: 40px;
+            /* 直接给整个栏的内边距，和下方卡片对齐 */
+            padding-left: 260px;
         }
 
         .top-logo {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 72px;
             height: 72px;
             border-radius: 50%;
@@ -47,17 +51,12 @@
             align-items: center;
             justify-content: center;
             text-transform: uppercase;
-            flex-shrink: 0;
-            margin-right: 30px;
         }
 
-        /* 标题容器：与下方卡片左对齐 */
         .top-title-wrap {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* 这里是关键：标题区域的左边距 = 侧边栏宽度 + 卡片内边距 */
-            margin-left: calc(220px - 40px);
         }
         .top-title-cn {
             font-size: 22px;
