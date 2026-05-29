@@ -3,35 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nora | 作品集</title>
+    <title>Nora | Portfolio</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "PingFang SC", "Helvetica Neue", sans-serif; background: #fff; color: #111; line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
-        header { margin-bottom: 80px; }
-        h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
-        .sub { font-size: 18px; color: #666; }
-        .project { margin-bottom: 60px; }
-        h2 { font-size: 24px; margin-bottom: 20px; }
-        iframe { width: 100%; height: 700px; border: 1px solid #eee; border-radius: 8px; }
-        a { color: #000; text-decoration: underline; }
-        footer { margin-top: 100px; font-size: 14px; color: #999; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+        }
+        /* 顶部导航 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            z-index: 99;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px 60px;
+        }
+        /* 作品网格 */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+            gap: 40px;
+        }
+        .work-item {
+            display: block;
+            text-decoration: none;
+            color: #111;
+        }
+        .work-thumbnail {
+            width: 100%;
+            height: 320px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+        .work-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .work-item:hover .work-thumbnail img {
+            transform: scale(1.03);
+        }
+        .work-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .work-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 13px;
+            color: #999;
+        }
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+            .nav-links a {
+                margin-left: 16px;
+            }
+            .container {
+                padding: 100px 20px 40px;
+            }
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Nora</h1>
-            <p class="sub">UX / 交互设计师 | 作品集</p>
-        </header>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">Nora</div>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-        <section class="project">
-            <h2>作品集 PDF</h2>
-            <iframe src="project1.pdf"></iframe>
-            <p style="margin-top:10px;">打不开？<a href="portfolio1.pdf" target="_blank">点这里打开</a></p>
-        </section>
+    <!-- 作品集区域 预留4个格子 -->
+    <div class="container" id="work">
+        <div class="work-grid">
+            <!-- 项目1 主作品集 -->
+            <a href="portfolio1.pdf" target="_blank" class="work-item">
+                <div class="work-thumbnail">
+                    <!-- 后续上传封面图后取消注释 -->
+                    <!-- <img src="work1-cover.jpg" alt="作品集封面"> -->
+                    作品1 封面空位
+                </div>
+                <div class="work-title">个人作品集</div>
+                <div class="work-desc">交互设计 / UX · 全案设计</div>
+            </a>
 
-        <footer>© 2026 Nora. All rights reserved.</footer>
+            <!-- 项目2 空位 -->
+            <a href="#" class="work-item">
+                <div class="work-thumbnail">
+                    作品2 封面空位
+                </div>
+                <div class="work-title">项目名称</div>
+                <div class="work-desc">交互设计 / UX</div>
+            </a>
+
+            <!-- 项目3 空位 -->
+            <a href="#" class="work-item">
+                <div class="work-thumbnail">
+                    作品3 封面空位
+                </div>
+                <div class="work-title">项目名称</div>
+                <div class="work-desc">交互设计 / UX</div>
+            </a>
+
+            <!-- 项目4 空位 -->
+            <a href="#" class="work-item">
+                <div class="work-thumbnail">
+                    作品4 封面空位
+                </div>
+                <div class="work-title">项目名称</div>
+                <div class="work-desc">交互设计 / UX</div>
+            </a>
+        </div>
     </div>
+
+    <!-- 页脚 -->
+    <footer>
+        © 2026 Nora · Interaction / UX Designer
+    </footer>
 </body>
 </html>
