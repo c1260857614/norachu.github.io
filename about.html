@@ -68,16 +68,54 @@
             line-height: 1.6;
         }
 
-        /* 主内容区：居中窄版，左右大留白 */
-        .wrapper {
+        /* 主容器：内容+二维码两栏 */
+        .container {
             margin-left: 220px;
-            /* 居中限制宽度，左右留空变大 */
-            max-width: 680px;
-            margin-right: auto;
+            display: flex;
+            align-items: flex-start;
             padding: 8rem 60px 4rem 60px;
+            gap: 80px;
         }
 
-        /* 模块间距收紧，整体更紧凑 */
+        /* 左侧文字内容：居中窄版 */
+        .wrapper {
+            max-width: 680px;
+            flex: 1;
+        }
+
+        /* 右侧二维码卡片 */
+        .contact-card {
+            flex-shrink: 0;
+            width: 220px;
+            position: sticky;
+            top: 8rem;
+        }
+
+        .qrcode-area {
+            width: 100%;
+            height: 220px;
+            background: #f3f3f3;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* 模块间距收紧 */
         .content-block {
             margin-bottom: 48px;
         }
@@ -165,6 +203,18 @@
         }
 
         /* 移动端适配 */
+        @media (max-width: 960px) {
+            .container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .contact-card {
+                position: static;
+                width: 100%;
+                max-width: 220px;
+            }
+        }
+
         @media (max-width: 768px) {
             aside {
                 position: relative;
@@ -182,9 +232,8 @@
             .side-footer {
                 display: none;
             }
-            .wrapper {
+            .container {
                 margin-left: 0;
-                max-width: 100%;
                 padding: 2rem 24px 3rem 24px;
             }
             .section-title {
@@ -216,52 +265,70 @@
         </div>
     </aside>
 
-    <div class="wrapper">
-        <!-- 关于我 -->
-        <div class="content-block">
-            <div class="section-head">
-                <div class="section-title">关于我</div>
-                <div class="section-en">About Me</div>
+    <div class="container">
+        <!-- 左侧文字内容 -->
+        <div class="wrapper">
+            <!-- 关于我 -->
+            <div class="content-block">
+                <div class="section-head">
+                    <div class="section-title">关于我</div>
+                    <div class="section-en">About Me</div>
+                </div>
+                <p class="about-text">
+                    你好，我是 Nora，一名专注于用户体验与交互设计的设计师。秉持以用户为中心的设计理念，擅长梳理产品信息架构、用户流程、界面逻辑与原型落地，致力于打造简洁、好用且有温度的数字产品体验。
+                </p>
             </div>
-            <p class="about-text">
-                你好，我是 Nora，一名专注于用户体验与交互设计的设计师。秉持以用户为中心的设计理念，擅长梳理产品信息架构、用户流程、界面逻辑与原型落地，致力于打造简洁、好用且有温度的数字产品体验。
-            </p>
+
+            <!-- 经历 -->
+            <div class="content-block">
+                <div class="section-head">
+                    <div class="section-title">经历</div>
+                    <div class="section-en">Experience</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025 - 至今</div>
+                        <div class="timeline-title">交互 / UX 设计师</div>
+                        <div class="timeline-desc">负责移动端、Web 产品交互架构、流程设计、可用性体验优化。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023 - 2025</div>
+                        <div class="timeline-title">UX 交互设计</div>
+                        <div class="timeline-desc">产品信息架构、用户流程梳理、原型设计与交互规范搭建。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">教育背景</div>
+                        <div class="timeline-title">工业设计 · 产品设计方向</div>
+                        <div class="timeline-desc">主修工业设计专业，产品设计方向，奠定用户思维与产品设计基础。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专业技能 & 工具 -->
+            <div class="content-block">
+                <div class="section-head">
+                    <div class="section-title">专业技能 & 工具</div>
+                    <div class="section-en">Skills & Tools</div>
+                </div>
+                <div class="skills">
+                    <p>用户研究 · 信息架构 · 线框图 · 交互原型 · 可用性测试</p>
+                    <p>Figma · Sketch · Photoshop · Illustrator · Miro</p>
+                </div>
+            </div>
         </div>
 
-        <!-- 经历 -->
-        <div class="content-block">
-            <div class="section-head">
-                <div class="section-title">经历</div>
-                <div class="section-en">Experience</div>
+        <!-- 右侧二维码 + 联系方式卡片 -->
+        <div class="contact-card">
+            <!-- 二维码区域：上传图片后把这里的背景替换成 <img> -->
+            <div class="qrcode-area">
+                <!-- 上传二维码图片后，替换为：
+                <img src="qrcode.jpg" alt="联系方式二维码" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">
+                -->
+                二维码区域
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2025 - 至今</div>
-                    <div class="timeline-title">交互 / UX 设计师</div>
-                    <div class="timeline-desc">负责移动端、Web 产品交互架构、流程设计、可用性体验优化。</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2023 - 2025</div>
-                    <div class="timeline-title">UX 交互设计</div>
-                    <div class="timeline-desc">产品信息架构、用户流程梳理、原型设计与交互规范搭建。</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">教育背景</div>
-                    <div class="timeline-title">工业设计 · 产品设计方向</div>
-                    <div class="timeline-desc">主修工业设计专业，产品设计方向，奠定用户思维与产品设计基础。</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 专业技能 & 工具 -->
-        <div class="content-block">
-            <div class="section-head">
-                <div class="section-title">专业技能 & 工具</div>
-                <div class="section-en">Skills & Tools</div>
-            </div>
-            <div class="skills">
-                <p>用户研究 · 信息架构 · 线框图 · 交互原型 · 可用性测试</p>
-                <p>Figma · Sketch · Photoshop · Illustrator · Miro</p>
+            <div class="contact-info">
+                <p>电话：<a href="tel:+8613800000000">138-0013-8000</a></p>
+                <p>邮箱：<a href="mailto:nora@example.com">nora@example.com</a></p>
             </div>
         </div>
     </div>
