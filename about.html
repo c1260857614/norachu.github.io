@@ -33,11 +33,20 @@
             background: #fff;
         }
 
-        .logo {
+        /* 72px 黑底白字 圆形LOGO 全大写 */
+        .logo-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background-color: #000000;
+            color: #ffffff;
             font-size: 18px;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            margin-bottom: 60px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
         }
 
         .nav-menu {
@@ -83,18 +92,18 @@
             flex: 1;
         }
 
-        /* 右侧联系方式栏 - 按你红框的宽高放大 */
+        /* 右侧联系方式栏 */
         .contact-column {
             flex-shrink: 0;
-            width: 320px; /* 按红框拉宽 */
+            width: 320px;
             position: sticky;
             top: 8rem;
         }
 
-        /* 二维码区域 - 按红框放大 */
+        /* 二维码区域 */
         .qrcode-area {
             width: 100%;
-            height: 320px; /* 高度放大 */
+            height: 320px;
             background: #f3f3f3;
             border-radius: 4px;
             margin-bottom: 24px;
@@ -230,7 +239,7 @@
                 height: auto;
                 padding: 24px 20px;
             }
-            .logo {
+            .logo-circle {
                 margin-bottom: 20px;
             }
             .nav-menu {
@@ -258,13 +267,13 @@
 </head>
 <body>
     <aside>
-        <div class="nav-top">
-            <div class="logo">Nora</div>
-            <div class="nav-menu">
-                <a href="index.html">Work</a>
-                <a href="about.html" class="active">About</a>
-                <a href="#">Contact</a>
-            </div>
+        <!-- 替换为 72px 黑底白圆 全大写 NORA -->
+        <div class="logo-circle">nora</div>
+
+        <div class="nav-menu">
+            <a href="index.html">Work</a>
+            <a href="about.html" class="active">About</a>
+            <a href="#">Contact</a>
         </div>
 
         <div class="side-footer">
@@ -325,17 +334,13 @@
             </div>
         </div>
 
-        <!-- 右侧联系方式栏（按你示意的布局） -->
+        <!-- 右侧联系方式栏 -->
         <div class="contact-column">
-            <!-- 二维码区域（红框放大版） -->
             <div class="qrcode-area">
-                <!-- 上传二维码图片后，替换为：
-                <img src="qrcode.jpg" alt="联系方式二维码" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">
-                -->
+                <!-- 在这里放二维码img即可 -->
                 二维码区域
             </div>
 
-            <!-- 下方两个独立联系方式框（蓝框样式） -->
             <div class="contact-info-group">
                 <div class="contact-info-box">
                     电话：<a href="tel:+8613800138000">138-0013-8000</a>
