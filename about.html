@@ -83,20 +83,21 @@
             flex: 1;
         }
 
-        /* 右侧二维码卡片 */
-        .contact-card {
+        /* 右侧联系方式栏 - 按你红框的宽高放大 */
+        .contact-column {
             flex-shrink: 0;
-            width: 220px;
+            width: 320px; /* 按红框拉宽 */
             position: sticky;
             top: 8rem;
         }
 
+        /* 二维码区域 - 按红框放大 */
         .qrcode-area {
             width: 100%;
-            height: 220px;
+            height: 320px; /* 高度放大 */
             background: #f3f3f3;
             border-radius: 4px;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,13 +105,20 @@
             font-size: 14px;
         }
 
-        .contact-info {
+        /* 联系方式两个独立小框 */
+        .contact-info-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-info-box {
+            padding: 10px 12px;
             font-size: 13px;
             color: #444;
-            line-height: 1.8;
+            border: 1px solid #eee;
+            border-radius: 2px;
         }
-
-        .contact-info a {
+        .contact-info-box a {
             color: #000;
             text-decoration: none;
         }
@@ -203,15 +211,15 @@
         }
 
         /* 移动端适配 */
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
             .container {
                 flex-direction: column;
                 gap: 40px;
             }
-            .contact-card {
+            .contact-column {
                 position: static;
                 width: 100%;
-                max-width: 220px;
+                max-width: 320px;
             }
         }
 
@@ -317,18 +325,24 @@
             </div>
         </div>
 
-        <!-- 右侧二维码 + 联系方式卡片 -->
-        <div class="contact-card">
-            <!-- 二维码区域：上传图片后把这里的背景替换成 <img> -->
+        <!-- 右侧联系方式栏（按你示意的布局） -->
+        <div class="contact-column">
+            <!-- 二维码区域（红框放大版） -->
             <div class="qrcode-area">
                 <!-- 上传二维码图片后，替换为：
                 <img src="qrcode.jpg" alt="联系方式二维码" style="width:100%; height:100%; object-fit:cover; border-radius:4px;">
                 -->
                 二维码区域
             </div>
-            <div class="contact-info">
-                <p>电话：<a href="tel:+8613800000000">138-0013-8000</a></p>
-                <p>邮箱：<a href="mailto:nora@example.com">nora@example.com</a></p>
+
+            <!-- 下方两个独立联系方式框（蓝框样式） -->
+            <div class="contact-info-group">
+                <div class="contact-info-box">
+                    电话：<a href="tel:+8613800138000">138-0013-8000</a>
+                </div>
+                <div class="contact-info-box">
+                    邮箱：<a href="mailto:nora@example.com">nora@example.com</a>
+                </div>
             </div>
         </div>
     </div>
