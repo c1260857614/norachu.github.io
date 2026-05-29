@@ -110,6 +110,7 @@
             align-items: flex-start;
             padding: 40px 40px;
             gap: 80px;
+            flex-wrap: nowrap; /* 强制不换行 */
         }
 
         .wrapper {
@@ -236,54 +237,6 @@
         .skills p:last-child {
             margin-bottom: 0;
         }
-
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .contact-column {
-                position: static;
-                width: 100%;
-                max-width: 320px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-bar {
-                display: none;
-            }
-            body {
-                padding-top: 0;
-            }
-            aside {
-                position: relative;
-                top: 0;
-                width: 100%;
-                height: auto;
-                padding: 24px 20px;
-            }
-            .nav-menu {
-                flex-direction: row;
-                gap: 20px;
-            }
-            .side-footer {
-                display: none;
-            }
-            .container {
-                margin-left: 0;
-                padding: 20px 24px;
-            }
-            .section-title {
-                font-size: 24px;
-            }
-            .section-en {
-                font-size: 13px;
-            }
-            .section-head {
-                gap: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -291,7 +244,7 @@
         <div class="top-logo">nora</div>
         <div class="top-title-wrap">
             <div class="top-title-cn">一些自我介绍</div>
-            <div class="top-title-en">Introduce Myself</div>
+            <div class="top-title-en">Introduce & Contact</div>
         </div>
     </div>
 
@@ -307,9 +260,21 @@
         </div>
     </aside>
 
-    <!-- 只互换左右两块位置，结构样式完全不变 -->
     <div class="container">
-        <!-- 原来右侧文字 现在放左边 -->
+        <!-- 左边：二维码 -->
+        <div class="contact-column">
+            <div class="qrcode-area">二维码区域</div>
+            <div class="contact-info-group">
+                <div class="contact-info-box">
+                    电话：<a href="tel:+8613800138000">138-0013-8000</a>
+                </div>
+                <div class="contact-info-box">
+                    邮箱：<a href="mailto:nora@example.com">nora@example.com</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右边：文字 -->
         <div class="wrapper">
             <div class="content-block">
                 <div class="section-head">
@@ -351,19 +316,6 @@
                 <div class="skills">
                     <p>用户研究 · 信息架构 · 线框图 · 交互原型 · 可用性测试</p>
                     <p>Figma · Sketch · Photoshop · Illustrator · Miro</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 原来左侧二维码 现在放右边 -->
-        <div class="contact-column">
-            <div class="qrcode-area">二维码区域</div>
-            <div class="contact-info-group">
-                <div class="contact-info-box">
-                    电话：<a href="tel:+8613800138000">138-0013-8000</a>
-                </div>
-                <div class="contact-info-box">
-                    邮箱：<a href="mailto:nora@example.com">nora@example.com</a>
                 </div>
             </div>
         </div>
