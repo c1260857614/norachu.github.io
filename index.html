@@ -19,7 +19,7 @@
             padding-top: 90px;
         }
 
-        /* 顶部固定栏 去掉底部分割线 */
+        /* 顶部固定栏 */
         .top-bar {
             position: fixed;
             top: 0;
@@ -27,15 +27,13 @@
             width: 100%;
             height: 90px;
             background: #fff;
-            /* 删掉了 border-bottom 分割线 */
             z-index: 200;
             display: flex;
             align-items: center;
+            /* 头像左对齐侧边栏，标题区域整体向右偏移 */
             padding-left: 40px;
-            gap: 30px;
         }
 
-        /* 顶部圆形头像 72px */
         .top-logo {
             width: 72px;
             height: 72px;
@@ -50,13 +48,16 @@
             justify-content: center;
             text-transform: uppercase;
             flex-shrink: 0;
+            margin-right: 30px;
         }
 
-        /* 顶部标题区域 和下方内容左对齐 */
+        /* 标题容器：与下方卡片左对齐 */
         .top-title-wrap {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            /* 这里是关键：标题区域的左边距 = 侧边栏宽度 + 卡片内边距 */
+            margin-left: calc(220px - 40px);
         }
         .top-title-cn {
             font-size: 22px;
@@ -79,7 +80,6 @@
             z-index: 100;
         }
 
-        /* 左侧导航 取消Nora文字，直接靠上 */
         .nav-menu {
             display: flex;
             flex-direction: column;
@@ -108,7 +108,7 @@
             line-height: 1.6;
         }
 
-        /* 主内容区 与顶部标题左对齐 */
+        /* 主内容区 */
         .wrapper {
             max-width: 100%;
             padding: 40px 40px 4rem 40px;
@@ -196,7 +196,6 @@
 </head>
 <body>
 
-    <!-- 顶部固定栏 -->
     <div class="top-bar">
         <div class="top-logo">nora</div>
         <div class="top-title-wrap">
@@ -205,14 +204,12 @@
         </div>
     </div>
 
-    <!-- 左侧侧边栏：已取消Nora文字，导航靠上 -->
     <aside>
         <div class="nav-menu">
             <a href="index.html" class="active">Work</a>
             <a href="about.html">About</a>
             <a href="#">Contact</a>
         </div>
-
         <div class="side-footer">
             © 2026 Nora<br>
             Interaction / UX Designer
