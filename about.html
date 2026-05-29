@@ -19,7 +19,7 @@
             padding-top: 90px;
         }
 
-        /* 顶部固定栏 去掉底部分割线 */
+        /* 顶部固定栏 */
         .top-bar {
             position: fixed;
             top: 0;
@@ -31,7 +31,6 @@
             display: flex;
             align-items: center;
             padding-left: 40px;
-            gap: 30px;
         }
 
         .top-logo {
@@ -48,12 +47,15 @@
             justify-content: center;
             text-transform: uppercase;
             flex-shrink: 0;
+            margin-right: 30px;
         }
 
+        /* 标题容器：与下方内容左对齐 */
         .top-title-wrap {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-left: calc(220px - 40px);
         }
         .top-title-cn {
             font-size: 22px;
@@ -290,23 +292,20 @@
     </style>
 </head>
 <body>
-    <!-- 顶部固定栏 -->
     <div class="top-bar">
         <div class="top-logo">nora</div>
         <div class="top-title-wrap">
             <div class="top-title-cn">一些自我介绍</div>
-            <div class="top-title-en">About Me</div>
+            <div class="top-title-en">Introduce Myself</div>
         </div>
     </div>
 
-    <!-- 左侧侧边栏：无Nora文字，导航靠上 -->
     <aside>
         <div class="nav-menu">
             <a href="index.html">Work</a>
             <a href="about.html" class="active">About</a>
             <a href="#">Contact</a>
         </div>
-
         <div class="side-footer">
             © 2026 Nora<br>
             Interaction / UX Designer
