@@ -10,164 +10,178 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif;
-            background-color: #ffffff;
-            color: #111111;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.55;
         }
-        /* 顶部导航 */
+
+        /* 顶部导航 1:1 同款 */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 24px 40px;
+            padding: 2.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #fff;
-            z-index: 99;
+            z-index: 100;
         }
+
         .logo {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
-        .nav-links a {
-            margin-left: 32px;
-            text-decoration: none;
-            color: #111;
+
+        .nav-menu a {
+            margin-left: 2.5rem;
             font-size: 14px;
-            opacity: 0.7;
-            transition: opacity 0.2s;
+            color: #000;
+            text-decoration: none;
+            opacity: 0.65;
+            transition: opacity 0.25s ease;
         }
-        .nav-links a:hover {
+
+        .nav-menu a:hover {
             opacity: 1;
         }
+
         /* 主容器 */
-        .container {
-            max-width: 1200px;
+        .wrapper {
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 120px 40px 60px;
+            padding: 8rem 3rem 4rem;
         }
-        /* 作品网格 */
+
+        /* 作品网格 同款两列 */
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3.5rem 2.5rem;
         }
-        .work-item {
-            display: block;
+
+        .work-card {
             text-decoration: none;
-            color: #111;
+            color: #000;
+            display: block;
         }
-        .work-thumbnail {
+
+        .cover {
             width: 100%;
-            height: 320px;
-            background-color: #f5f5f5;
-            border-radius: 4px;
+            height: 300px;
+            background: #f3f3f3;
+            border-radius: 2px;
             overflow: hidden;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            font-size: 14px;
+            margin-bottom: 1rem;
         }
-        .work-thumbnail img {
+
+        .cover img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.35s ease;
         }
-        .work-item:hover .work-thumbnail img {
-            transform: scale(1.03);
+
+        .work-card:hover .cover img {
+            transform: scale(1.04);
         }
+
         .work-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
-            margin-bottom: 4px;
+            margin-bottom: 0.3rem;
         }
+
         .work-desc {
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
         }
+
         /* 页脚 */
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 13px;
+            padding: 3rem 0;
+            font-size: 12px;
             color: #999;
         }
-        /* 移动端适配 */
+
+        /* 移动端自适应 单列 */
         @media (max-width: 768px) {
             nav {
-                padding: 16px 20px;
+                padding: 1.5rem 1.2rem;
             }
-            .nav-links a {
-                margin-left: 16px;
+            .nav-menu a {
+                margin-left: 1.2rem;
             }
-            .container {
-                padding: 100px 20px 40px;
+            .wrapper {
+                padding: 6rem 1.2rem 3rem;
             }
             .work-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 2.5rem 0;
+            }
+            .cover {
+                height: 240px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 导航 -->
     <nav>
         <div class="logo">Nora</div>
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+        <div class="nav-menu">
+            <a href="#">Work</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </div>
     </nav>
 
-    <!-- 作品集区域 预留4个格子 -->
-    <div class="container" id="work">
+    <!-- 作品区域 预留4个空位 -->
+    <div class="wrapper">
         <div class="work-grid">
-            <!-- 项目1 主作品集 -->
-            <a href="portfolio1.pdf" target="_blank" class="work-item">
-                <div class="work-thumbnail">
-                    <!-- 后续上传封面图后取消注释 -->
-                    <!-- <img src="work1-cover.jpg" alt="作品集封面"> -->
-                    作品1 封面空位
+
+            <!-- 项目1 -->
+            <a href="portfolio1.pdf" target="_blank" class="work-card">
+                <div class="cover">
+                    <!-- 以后上传封面图就换成：<img src="cover1.jpg"> -->
                 </div>
-                <div class="work-title">个人作品集</div>
-                <div class="work-desc">交互设计 / UX · 全案设计</div>
+                <div class="work-title">Portfolio</div>
+                <div class="work-desc">Interaction / UX Design</div>
             </a>
 
-            <!-- 项目2 空位 -->
-            <a href="#" class="work-item">
-                <div class="work-thumbnail">
-                    作品2 封面空位
+            <!-- 项目2 -->
+            <a href="#" class="work-card">
+                <div class="cover">
+                    <!-- <img src="cover2.jpg"> -->
                 </div>
-                <div class="work-title">项目名称</div>
-                <div class="work-desc">交互设计 / UX</div>
+                <div class="work-title">Project Name</div>
+                <div class="work-desc">Interaction / UX Design</div>
             </a>
 
-            <!-- 项目3 空位 -->
-            <a href="#" class="work-item">
-                <div class="work-thumbnail">
-                    作品3 封面空位
+            <!-- 项目3 -->
+            <a href="#" class="work-card">
+                <div class="cover">
+                    <!-- <img src="cover3.jpg"> -->
                 </div>
-                <div class="work-title">项目名称</div>
-                <div class="work-desc">交互设计 / UX</div>
+                <div class="work-title">Project Name</div>
+                <div class="work-desc">Interaction / UX Design</div>
             </a>
 
-            <!-- 项目4 空位 -->
-            <a href="#" class="work-item">
-                <div class="work-thumbnail">
-                    作品4 封面空位
+            <!-- 项目4 -->
+            <a href="#" class="work-card">
+                <div class="cover">
+                    <!-- <img src="cover4.jpg"> -->
                 </div>
-                <div class="work-title">项目名称</div>
-                <div class="work-desc">交互设计 / UX</div>
+                <div class="work-title">Project Name</div>
+                <div class="work-desc">Interaction / UX Design</div>
             </a>
+
         </div>
     </div>
 
