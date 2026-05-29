@@ -18,14 +18,14 @@
             line-height: 1.55;
         }
 
-        /* 左侧固定侧边导航 */
+        /* 左侧导航：加宽整体留白宽度 */
         aside {
             position: fixed;
             top: 0;
             left: 0;
-            width: 180px;
+            width: 220px;
             height: 100vh;
-            padding: 48px 30px;
+            padding: 48px 40px;
             display: flex;
             flex-direction: column;
             z-index: 100;
@@ -56,19 +56,18 @@
             opacity: 1;
         }
 
-        /* 主内容区 往右避开侧边栏 */
+        /* 主内容区：左缩进对应加宽导航，右侧不留白，拉满 */
         .wrapper {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 8rem 3rem 4rem;
-            margin-left: 180px;
+            max-width: 100%;
+            padding: 8rem 40px 4rem 40px;
+            margin-left: 220px;
         }
 
-        /* 作品网格 同款两列 */
+        /* 作品网格：拉大格子、紧凑间距，右侧填满 */
         .work-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3.5rem 2.5rem;
+            gap: 48px 32px;
         }
 
         .work-card {
@@ -79,7 +78,7 @@
 
         .cover {
             width: 100%;
-            height: 300px;
+            height: 340px;
             background: #f3f3f3;
             border-radius: 2px;
             overflow: hidden;
@@ -108,16 +107,16 @@
             color: #666;
         }
 
-        /* 页脚 */
+        /* 页脚同步左缩进 */
         footer {
             text-align: center;
             padding: 3rem 0;
             font-size: 12px;
             color: #999;
-            margin-left: 180px;
+            margin-left: 220px;
         }
 
-        /* 移动端适配 */
+        /* 移动端适配不变 */
         @media (max-width: 768px) {
             aside {
                 position: relative;
@@ -134,14 +133,14 @@
             }
             .wrapper {
                 margin-left: 0;
-                padding: 2rem 1.2rem 3rem;
+                padding: 2rem 16px 3rem;
             }
             footer {
                 margin-left: 0;
             }
             .work-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem 0;
+                gap: 30px 0;
             }
             .cover {
                 height: 240px;
@@ -160,14 +159,14 @@
         </div>
     </aside>
 
-    <!-- 作品区域 4个空位不变 -->
+    <!-- 作品区域 -->
     <div class="wrapper">
         <div class="work-grid">
 
             <!-- 项目1 -->
             <a href="portfolio1.pdf" target="_blank" class="work-card">
                 <div class="cover">
-                    <!-- 以后上传封面图：<img src="cover1.jpg"> -->
+                    <!-- <img src="cover1.jpg"> -->
                 </div>
                 <div class="work-title">Portfolio</div>
                 <div class="work-desc">Interaction / UX Design</div>
