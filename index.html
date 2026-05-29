@@ -32,10 +32,20 @@
             z-index: 100;
         }
 
-        .logo {
+        /* 72px 黑底白字圆形LOGO 全大写 */
+        .logo-circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background-color: #000000;
+            color: #ffffff;
             font-size: 18px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
             margin-bottom: 60px;
         }
 
@@ -54,6 +64,11 @@
         }
 
         .nav-menu a:hover {
+            opacity: 1;
+        }
+
+        /* 当前页面高亮 */
+        .nav-menu a.active {
             opacity: 1;
         }
 
@@ -123,7 +138,7 @@
                 height: auto;
                 padding: 24px 20px;
             }
-            .logo {
+            .logo-circle {
                 margin-bottom: 20px;
             }
             .nav-menu {
@@ -152,9 +167,9 @@
     <!-- 左侧侧边栏：上方导航 + 底部页脚 -->
     <aside>
         <div class="nav-top">
-            <div class="logo">Nora</div>
+            <div class="logo-circle">nora</div>
             <div class="nav-menu">
-                <a href="index.html">Work</a>
+                <a href="index.html" class="active">Work</a>
                 <a href="about.html">About</a>
                 <a href="#">Contact</a>
             </div>
