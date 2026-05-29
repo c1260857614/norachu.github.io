@@ -13,12 +13,12 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
-            background: #f7f7f7;
+            background: #ffffff;
             color: #000000;
             line-height: 1.65;
         }
 
-        /* 左侧侧边栏 */
+        /* 左侧侧边栏 固定宽度 */
         aside {
             position: fixed;
             top: 0;
@@ -68,21 +68,21 @@
             line-height: 1.6;
         }
 
-        /* 主内容区 */
+        /* 主内容区：居中窄版，左右大留白 */
         .wrapper {
-            max-width: 100%;
-            padding: 8rem 40px 4rem 40px;
             margin-left: 220px;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
+            /* 居中限制宽度，左右留空变大 */
+            max-width: 680px;
+            margin-right: auto;
+            padding: 8rem 60px 4rem 60px;
         }
 
-        /* 内容卡片 区块化 */
-        .card {
-            background: #ffffff;
-            padding: 36px;
-            border-radius: 4px;
+        /* 模块间距收紧，整体更紧凑 */
+        .content-block {
+            margin-bottom: 48px;
+        }
+        .content-block:last-child {
+            margin-bottom: 0;
         }
 
         /* 标题行：中文 + 英文同行左右排布 */
@@ -90,17 +90,15 @@
             display: flex;
             align-items: baseline;
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 20px;
         }
 
-        /* 中文主标题 统一大小 */
         .section-title {
             font-size: 28px;
             font-weight: 500;
             color: #000;
         }
 
-        /* 英文副标：右侧、更小、浅灰 */
         .section-en {
             font-size: 15px;
             color: #999;
@@ -116,7 +114,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 36px;
+            margin-bottom: 28px;
         }
 
         .timeline-item:last-child {
@@ -126,13 +124,13 @@
         .timeline-year {
             font-size: 14px;
             color: #888;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .timeline-title {
             font-size: 16px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .timeline-desc {
@@ -159,7 +157,7 @@
         .skills p {
             font-size: 15px;
             color: #444;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .skills p:last-child {
@@ -186,11 +184,8 @@
             }
             .wrapper {
                 margin-left: 0;
-                padding: 2rem 16px 3rem;
-                gap: 20px;
-            }
-            .card {
-                padding: 24px;
+                max-width: 100%;
+                padding: 2rem 24px 3rem 24px;
             }
             .section-title {
                 font-size: 24px;
@@ -222,8 +217,8 @@
     </aside>
 
     <div class="wrapper">
-        <!-- 关于我 独立卡片 -->
-        <div class="card">
+        <!-- 关于我 -->
+        <div class="content-block">
             <div class="section-head">
                 <div class="section-title">关于我</div>
                 <div class="section-en">About Me</div>
@@ -233,8 +228,8 @@
             </p>
         </div>
 
-        <!-- 经历 独立卡片 -->
-        <div class="card">
+        <!-- 经历 -->
+        <div class="content-block">
             <div class="section-head">
                 <div class="section-title">经历</div>
                 <div class="section-en">Experience</div>
@@ -258,8 +253,8 @@
             </div>
         </div>
 
-        <!-- 专业技能 & 工具 独立卡片 -->
-        <div class="card">
+        <!-- 专业技能 & 工具 -->
+        <div class="content-block">
             <div class="section-head">
                 <div class="section-title">专业技能 & 工具</div>
                 <div class="section-en">Skills & Tools</div>
