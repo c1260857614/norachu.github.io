@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nora | About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.65;
+        }
+
+        /* 左侧侧边导航 和主页一致 */
+        aside {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 100vh;
+            padding: 48px 30px;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+            opacity: 0.65;
+            transition: opacity 0.25s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 1;
+        }
+        .nav-menu a.active {
+            opacity: 1;
+        }
+
+        /* 主内容区 */
+        .wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 8rem 3rem 4rem;
+            margin-left: 180px;
+        }
+
+        .wrapper h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        /* 时间轴核心样式 */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            border-left: 1px solid #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 36px;
+        }
+
+        .timeline-year {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 15px;
+            color: #444;
+        }
+
+        /* 时间轴圆点 */
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .about-text {
+            margin-bottom: 50px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .skills {
+            margin-top: 50px;
+        }
+        .skills h2 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .skills p {
+            font-size: 15px;
+            color: #444;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            font-size: 12px;
+            color: #999;
+            margin-left: 180px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 24px 20px;
+            }
+            .logo {
+                margin-bottom: 20px;
+            }
+            .nav-menu {
+                flex-direction: row;
+                gap: 20px;
+            }
+            .wrapper {
+                margin-left: 0;
+                padding: 2rem 1.2rem 3rem;
+            }
+            footer {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 左侧导航 -->
+    <aside>
+        <div class="logo">Nora</div>
+        <div class="nav-menu">
+            <a href="index.html">Work</a>
+            <a href="about.html" class="active">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </aside>
+
+    <div class="wrapper">
+        <h1>关于我</h1>
+
+        <p class="about-text">
+            你好，我是 Nora，一名专注于用户体验与交互设计的设计师。秉持以用户为中心的设计理念，擅长梳理产品信息架构、用户流程、界面逻辑与原型落地，致力于打造简洁、好用且有温度的数字产品体验。
+        </p>
+
+        <!-- 时间轴 -->
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-year">2025 - 至今</div>
+                <div class="timeline-title">交互 / UX 设计师</div>
+                <div class="timeline-desc">负责移动端、Web 产品交互架构、流程设计、可用性体验优化。</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2023 - 2025</div>
+                <div class="timeline-title">UX 交互设计</div>
+                <div class="timeline-desc">产品信息架构、用户流程梳理、原型设计与交互规范搭建。</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">教育背景</div>
+                <div class="timeline-title">工业设计 · 产品设计方向</div>
+                <div class="timeline-desc">主修工业设计专业，产品设计方向，奠定用户思维与产品设计基础。</div>
+            </div>
+
+        </div>
+
+        <div class="skills">
+            <h2>专业技能 & 工具</h2>
+            <p>用户研究 · 信息架构 · 线框图 · 交互原型 · 可用性测试</p>
+            <p>Figma · Sketch · Photoshop · Illustrator · Miro</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Nora · Interaction / UX Designer
+    </footer>
+</body>
+</html>
